@@ -89,7 +89,7 @@ def handleWebhook():
                 sender = msg['author']
                 sender = sender[:-5]
                 group_obj = groups.find_one({'chatId' : chatid , 'chatbot' : 1})
-                if group_obj is not None and (str(group_obj['owner']) != str(sender)):
+                if group_obj is not None and (str(group_obj['customer']) == str(sender)):
                     filter = {'_id' : group_obj['_id']}
                     msg_number = group_obj['msg_sent']
                     newvalues = { "$set": { 'msg_sent': msg_number +1 } }
