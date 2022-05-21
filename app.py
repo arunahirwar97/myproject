@@ -67,7 +67,7 @@ def index():
 '''
 
 
-@app.route('/j', methods=['POST'])
+@app.route('/handle', methods=['POST'])
 def handleWebhook():
     try:
 
